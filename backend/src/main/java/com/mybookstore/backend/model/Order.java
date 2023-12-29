@@ -1,15 +1,15 @@
 package com.mybookstore.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "\"order\"")
 public class Order {
     //Constructor
+
     public Order() {
     }
 
@@ -17,13 +17,25 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="FIRST_NAME", length=100, nullable=false, unique=false)
     private String firstName;
+    @Column(name="LAST_NAME", length=100, nullable=false, unique=false)
     private String lastName;
+
+    @Column(name="EMAIL", length=100, nullable=false, unique=false)
     private String email;
+
+    @Column(name="ADDRESS", nullable=false, unique=false)
     private String address;
 
+    @Column(name="ORDER_DATE", nullable=false, unique=false)
     private LocalDate orderDate;
-    private double totalPrice;
+
+    @Column(name="TOTAL_PRICE", nullable=false, unique=false)
+    private BigDecimal totalPrice;
+
+    @Column(name="ORDER_STATUS", length=100, nullable=false, unique=false)
     private String orderStatus;
 
     //Getters and Setters
@@ -76,11 +88,9 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
-    }
+    public BigDecimal getTotalPrice() {return totalPrice;}
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 

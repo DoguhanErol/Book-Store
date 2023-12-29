@@ -3,6 +3,7 @@ package com.mybookstore.backend.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "ORDER_DETAIL")
 public class OrderDetail {
     //Constructor
     public OrderDetail() {
@@ -21,7 +22,9 @@ public class OrderDetail {
     @JoinColumn(name = "book_id")
     private Book book;
 
+    @Column(name="QUANTITY", nullable=false, unique=false)
     private int quantity;
+    @Column(name="TOTAL_PRICE", nullable=false, unique=false)
     private double totalPrice;
 
     //Getters and Setters

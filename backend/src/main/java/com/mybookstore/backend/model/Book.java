@@ -1,29 +1,34 @@
 package com.mybookstore.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "BOOK")
 public class Book {
     //Constructor
     public Book() {
     }
 
-
     // Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="TITLE", length=100, nullable=false, unique=false)
     private String title;
+    @Column(name="AUTHOR", length=100, nullable=false, unique=false)
     private String author;
-    private String publisher;
+
+    @Column(name="PUBLICATION_DATE", nullable=false, unique=false)
     private LocalDate publicationDate;
-    private double price;
-    private int stockQuantity;
+
+    @Column(name="PRICE", nullable=false, unique=false)
+    private BigDecimal price;
+
+    @Column(name="CATEGORY",length = 80, nullable=false, unique=false)
     private String category;
 
 
@@ -52,14 +57,6 @@ public class Book {
         this.author = author;
     }
 
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
     public LocalDate getPublicationDate() {
         return publicationDate;
     }
@@ -68,20 +65,12 @@ public class Book {
         this.publicationDate = publicationDate;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public int getStockQuantity() {
-        return stockQuantity;
-    }
-
-    public void setStockQuantity(int stockQuantity) {
-        this.stockQuantity = stockQuantity;
     }
 
     public String getCategory() {
