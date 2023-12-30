@@ -21,7 +21,7 @@ public class Book {
     private String title;
     @Column(name="AUTHOR", length=100, nullable=false, unique=false)
     private String author;
-
+ 
     @Column(name="PUBLICATION_DATE", nullable=false, unique=false)
     private LocalDate publicationDate;
 
