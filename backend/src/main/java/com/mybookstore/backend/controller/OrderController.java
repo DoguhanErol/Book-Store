@@ -14,7 +14,7 @@ public class OrderController {
     public OrderController(OrderService orderService){
         this.orderService = orderService;
     }
-    @PostMapping("/order")
+    @PostMapping("/add")
     public Order createOrder(@RequestBody Order order){
         return orderService.createOrder(order);
     }
