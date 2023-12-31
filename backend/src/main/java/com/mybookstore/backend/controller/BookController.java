@@ -26,7 +26,8 @@ public class BookController {
     public List<Book> getBooksByCategory(@PathVariable String category){
         return bookService.getBooksByCategory(category);
     }
-    @PostMapping
+
+    @PostMapping("/add")
     public Book createBook(@RequestBody Book book){
         return bookService.saveBook(book);
     }
