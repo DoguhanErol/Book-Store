@@ -30,6 +30,8 @@ public class Book {
 
     @Column(name="CATEGORY",length = 80, nullable=false, unique=false)
     private String category;
+    @Column(name="IMAGE_PATH",length = 250, nullable=false, unique=false)
+    private String imagePath;
 
 
     //Getters and Setters
