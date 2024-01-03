@@ -5,19 +5,19 @@ import MyRoutes from "./MyRoutes"
 
 const Layout:React.FC = () => {
   return (
-    <div className="drawer">
+    <main className="drawer">
     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-    <div className="drawer-content">
+    <section className="drawer-content">
       {/* Header */}
       <Header />
       {/* Page content here */}
       <MyRoutes />
-    </div> 
+    </section> 
     <div className="drawer-side">
       <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
       <DropDownMenu />
     </div>
-  </div>
+  </main>
   )
 }
 
