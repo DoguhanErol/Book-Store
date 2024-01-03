@@ -1,6 +1,7 @@
 import * as React from "react"
 import DropDownMenu from "../Littles/DropDownMenu"
 import Header from "./Header"
+import MyRoutes from "./MyRoutes"
 
 const Layout:React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Layout:React.FC = () => {
       {/* Header */}
       <Header />
       {/* Page content here */}
- 
+      <MyRoutes />
     </div> 
     <div className="drawer-side">
       <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
