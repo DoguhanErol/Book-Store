@@ -1,14 +1,20 @@
+import { QueryClientProvider, QueryClient } from 'react-query'
 import './App.css'
+import Layout from './components/Shared/Layout';
 
+const reactQueryClient =  new QueryClient();
 
 function App() {
+  
 
   return (
     <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <QueryClientProvider client={reactQueryClient}>
+        <Layout />
+      </QueryClientProvider>
+
     </>
+
   )
 }
 
